@@ -2,7 +2,7 @@ backend:
   name: github
   repo: SSSergiy/docsy-hugo-autho-cloudflare
   branch: main 
-  auth_url: https://jamstack-auth.sergey1991serg.workers.dev
+  auth_url: https://jamstack-auth.sergey1991serg.workers.dev/auth
   base_url: https://api.github.com
   auth_scope: repo 
 
@@ -25,16 +25,16 @@ collections:
       - {label: "Body", name: "body", widget: "markdown", required: true}
       # Добавьте другие поля, если ваша структура Docsy их использует (например, `linktitle`, `type`, `layout`)
 
-  - name: "blog" # Пример коллекции для блога
-    label: "Блог"
-    folder: "content/en/blog" # Папка, где хранятся посты блога
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Заголовок", name: "title", widget: "string", required: true}
-      - {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: "HH:mm", required: true}
-      - {label: "Автор", name: "author", widget: "string", required: false}
-      - {label: "Body", name: "body", widget: "markdown", required: true}
+  # - name: "blog" # Пример коллекции для блога
+  #   label: "Блог"
+  #   folder: "content/en/blog" # Папка, где хранятся посты блога
+  #   create: true
+  #   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  #   fields:
+  #     - {label: "Заголовок", name: "title", widget: "string", required: true}
+  #     - {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: "HH:mm", required: true}
+  #     - {label: "Автор", name: "author", widget: "string", required: false}
+  #     - {label: "Body", name: "body", widget: "markdown", required: true}
 
   # Если у вас есть другие типы контента (например, 'posts', 'pages' в корне), добавьте их здесь
   # - name: "pages"
