@@ -1,23 +1,16 @@
 backend:
   name: github
-  # Замените 'SSSergiy/docsy-hugo-autho-cloudflare' на ВАШ_ПОЛЬЗОВАТЕЛЬ/ВАШ_РЕПОЗИТОРИЙ
   repo: SSSergiy/docsy-hugo-autho-cloudflare
-  branch: main # Или другая ветка, которую вы используете
-  # Замените 'https://jamstack-auth.sergey1991serg.workers.dev' на URL вашего Cloudflare Worker'а из Шага 6
+  branch: main 
   auth_url: https://jamstack-auth.sergey1991serg.workers.dev
   base_url: https://api.github.com
-  auth_scope: repo # Этот скоуп необходим для чтения/записи в репозиторий
+  auth_scope: repo 
 
-# Замените 'https://cb7c7fdc.docsy-hugo-autho-cloudflare.pages.dev' на публичный URL вашего Cloudflare Pages сайта из Шага 3
 display_url: https://cb7c71dc.docsy-hugo-autho-cloudflare.pages.dev
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
-# Далее идут определения коллекций контента.
-# Это примеры. Вам нужно будет адаптировать их под структуру вашего Docsy-сайта.
-# Docsy обычно использует папку 'content/en' для контента.
-# Примеры для Docsy:
 collections:
   - name: "docs" # Название коллекции в админке
     label: "Документация" # Отображаемое название
@@ -26,7 +19,7 @@ collections:
     slug: "{{slug}}" # Как генерировать имя файла
     fields:
       - {label: "Заголовок", name: "title", widget: "string", required: true}
-      - {label: "Дата публикации", name: "date", widget: "datetime", format: "YYYY-MM-DD", timeFormat: "HH:mm", required: true}
+      - {label: "Дата публикации", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: "HH:mm", required: true}
       - {label: "Вес (для сортировки)", name: "weight", widget: "number", min: 1, max: 1000, default: 50, required: false}
       - {label: "Описание", name: "description", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: true}
@@ -39,7 +32,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Заголовок", name: "title", widget: "string", required: true}
-      - {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", timeFormat: "HH:mm", required: true}
+      - {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: "HH:mm", required: true}
       - {label: "Автор", name: "author", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: true}
 
