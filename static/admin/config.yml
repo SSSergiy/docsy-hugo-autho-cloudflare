@@ -1,0 +1,51 @@
+backend:
+  name: github
+  # Замените 'SSSergiy/docsy-hugo-autho-cloudflare' на ВАШ_ПОЛЬЗОВАТЕЛЬ/ВАШ_РЕПОЗИТОРИЙ
+  repo: SSSergiy/docsy-hugo-autho-cloudflare
+  branch: main # Или другая ветка, которую вы используете
+  # Замените 'https://jamstack-auth.sergey1991serg.workers.dev' на URL вашего Cloudflare Worker'а из Шага 6
+  auth_url: https://jamstack-auth.sergey1991serg.workers.dev/auth
+  base_url: https://api.github.com
+  auth_scope: repo # Этот скоуп необходим для чтения/записи в репозиторий
+
+# Замените 'https://cb7c7fdc.docsy-hugo-autho-cloudflare.pages.dev' на публичный URL вашего Cloudflare Pages сайта из Шага 3
+display_url: https://cb7c71dc.docsy-hugo-autho-cloudflare.pages.dev
+
+# Далее идут определения коллекций контента.
+# Это примеры. Вам нужно будет адаптировать их под структуру вашего Docsy-сайта.
+# Docsy обычно использует папку 'content/en' для контента.
+# Примеры для Docsy:
+collections:
+  - name: "docs" # Название коллекции в админке
+    label: "Документация" # Отображаемое название
+    folder: "content/en/docs" # Папка, где хранятся файлы документации Docsy
+    create: true # Разрешить создание новых документов
+    slug: "{{slug}}" # Как генерировать имя файла
+    fields:
+      - {label: "Заголовок", name: "title", widget: "string", required: true}
+      - {label: "Дата публикации", name: "date", widget: "datetime", format: "YYYY-MM-DD", timeFormat: "HH:mm", required: true}
+      - {label: "Вес (для сортировки)", name: "weight", widget: "number", min: 1, max: 1000, default: 50, required: false}
+      - {label: "Описание", name: "description", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
+      # Добавьте другие поля, если ваша структура Docsy их использует (например, `linktitle`, `type`, `layout`)
+
+  - name: "blog" # Пример коллекции для блога
+    label: "Блог"
+    folder: "content/en/blog" # Папка, где хранятся посты блога
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Заголовок", name: "title", widget: "string", required: true}
+      - {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", timeFormat: "HH:mm", required: true}
+      - {label: "Автор", name: "author", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
+
+  # Если у вас есть другие типы контента (например, 'posts', 'pages' в корне), добавьте их здесь
+  # - name: "pages"
+  #   label: "Страницы"
+  #   files:
+  #     - file: "content/en/_index.md"
+  #       label: "Главная страница"
+  #       fields:
+  #         - {label: "Заголовок", name: "title", widget: "string"}
+  #         - {label: "Body", name: "body", widget: "markdown"}
