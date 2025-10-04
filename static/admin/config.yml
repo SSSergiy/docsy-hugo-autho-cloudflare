@@ -26,7 +26,7 @@ collections:
     slug: "{{slug}}" # Как генерировать имя файла
     fields:
       - {label: "Заголовок", name: "title", widget: "string", required: true}
-      - {label: "Дата публикации", name: "date", timeFormat: "time_format", format: "YYYY-MM-DD", timeFormat: "HH:mm", required: true}
+      - {label: "Дата публикации", name: "date", widget: "datetime", format: "YYYY-MM-DD", timeFormat: "HH:mm", required: true}
       - {label: "Вес (для сортировки)", name: "weight", widget: "number", min: 1, max: 1000, default: 50, required: false}
       - {label: "Описание", name: "description", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: true}
@@ -39,7 +39,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Заголовок", name: "title", widget: "string", required: true}
-      - {label: "Дата", name: "date", timeFormat: "time_format", format: "YYYY-MM-DD", timeFormat: "HH:mm", required: true}
+      - {label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD", timeFormat: "HH:mm", required: true}
       - {label: "Автор", name: "author", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: true}
 
