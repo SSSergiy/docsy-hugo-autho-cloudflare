@@ -11,6 +11,9 @@ backend:
 # Замените 'https://cb7c7fdc.docsy-hugo-autho-cloudflare.pages.dev' на публичный URL вашего Cloudflare Pages сайта из Шага 3
 display_url: https://cb7c71dc.docsy-hugo-autho-cloudflare.pages.dev
 
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
 # Далее идут определения коллекций контента.
 # Это примеры. Вам нужно будет адаптировать их под структуру вашего Docsy-сайта.
 # Docsy обычно использует папку 'content/en' для контента.
