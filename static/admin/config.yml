@@ -4,7 +4,7 @@ backend:
   repo: SSSergiy/docsy-hugo-autho-cloudflare
   branch: main # Или другая ветка, которую вы используете
   # Замените 'https://jamstack-auth.sergey1991serg.workers.dev' на URL вашего Cloudflare Worker'а из Шага 6
-  auth_url: https://jamstack-auth.sergey1991serg.workers.dev/auth
+  auth_url: https://jamstack-auth.sergey1991serg.workers.dev
   base_url: https://api.github.com
   auth_scope: repo # Этот скоуп необходим для чтения/записи в репозиторий
 
