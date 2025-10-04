@@ -6,7 +6,7 @@ backend:
   base_url: https://api.github.com
   auth_scope: repo 
 
-display_url: https://docsy-hugo-autho-cloudflare.pages.dev/auth
+display_url: https://docsy-hugo-autho-cloudflare.pages.dev
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
