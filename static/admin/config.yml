@@ -2,7 +2,7 @@ backend:
   name: github
   repo: SSSergiy/docsy-hugo-autho-cloudflare
   branch: main 
-  auth_url: https://jamstack-auth.sergey1991serg.workers.dev
+  auth_url: https://jamstack-auth.sergey1991serg.workers.dev/auth
   base_url: https://api.github.com
   auth_scope: repo 
 
